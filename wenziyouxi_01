@@ -1,0 +1,71 @@
+import Tkinter as tk
+
+root=tk.Tk()
+
+root.title('Who is the criminal?')
+
+label1=tk.Label(root,text="There are 3 criminal suspects (A,B,C).Please choose the crimianl(s).")
+label1.pack()
+
+def info1():
+	global label2
+	label2=tk.Label(root,text="A can not lie.")
+	label2.pack()
+
+def delete1():
+	label2.pack_forget()
+
+def info2():
+	global label3
+	label3=tk.Label(root,text="B is the victim's son.")
+	label3.pack()
+
+def delete2():
+	label3.pack_forget()
+
+def info3():
+	global label4
+	label4=tk.Label(root,text="C thinks that B is criminal.")
+	label4.pack()
+
+def delete3():
+	label4.pack_forget()
+
+def answer():
+	ans=entry.get()
+	if ans=='A':
+		label5=tk.Label(root,text='You are right!')
+	if ans=='a':
+		label5=tk.Label(root,text='You are right!')
+	else:
+		label5=tk.Label(root,text='You are wrong!')
+	label5.pack()
+
+button1=tk.Button(root,text="Show inforamtion 1",command=info1)
+button1.pack()
+
+button2=tk.Button(root,text="Hide information 1",command=delete1)
+button2.pack()
+
+button3=tk.Button(root,text="Show information 2",command=info2)
+button3.pack()
+
+button4=tk.Button(root,text="Hide information 2",command=delete2)
+button4.pack()
+
+button5=tk.Button(root,text="Show information 3",command=info3)
+button5.pack()
+
+button6=tk.Button(root,text="Hide information 3",command=delete3)
+button6.pack()
+
+label6=tk.Label(root,text="Show your answer.")
+label6.pack()
+
+entry=tk.Entry(root,text=None)
+entry.pack()
+
+button7=tk.Button(root,text='Submit',command=answer)
+button7.pack()
+
+root.mainloop()
